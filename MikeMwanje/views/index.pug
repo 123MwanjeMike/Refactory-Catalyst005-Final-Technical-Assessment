@@ -1,0 +1,78 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Registration Form
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
+        link(rel="stylesheet" href="css/styles.css")
+    body
+        .card.container
+            img(src="images/form-header-image.png")
+            // <h5 class="card-header">Featured</h5>
+            .card-body
+                h6.card-title Ministry of Health
+                h4
+                    strong COVID-19(CORONA VIRUS)
+                h6 Virus-Test Registration Form
+                form(name="pform" action="/" method="POST")
+                    .form-row
+                        .form-group.col-md-6
+                            label Surname 
+                            input#surName.form-control(type="text" name="surName")
+                            #surName_error
+                        .form-group.col-md-6
+                            label
+                                | Given name
+                            input#givenName.form-control(type="text" name="givenName")
+                            #givenName_error
+                    .form-row
+                        .form-group.col-md-6
+                            label
+                                | Date of Birth
+                            input#dob.form-control(type="date" name="dob")
+                            #dob_error
+                        .form-group.col-md-6
+                            label
+                                | Place of
+                                | Residence
+                            input#residence.form-control(type="text" name="residence")
+                            #residence_error
+                    .form-row
+                        .form-group.col-md-6
+                            label
+                                | Occupation
+                            input#occupation.form-control(type="text" name="occupation")
+                            #occupation_error
+                        .form-group.col-md-6
+                            label Nationality
+                            input#nationality.form-control(type="text" name="nationality")
+                            #nationality_error
+                    .form-row
+                        .form-group.col-md-12
+                            label Gender 
+                            br
+                            .gender.col-md-12
+                                input#male(type="radio" name="gender" value="Male" checked="")
+                                |   Male
+                                input#female(type="radio" name="gender" value="Female")
+                                |   Female
+                                #gender_error
+                    .form-row
+                        .form-group.col-md-12
+                            label
+                                | Category
+                            select#category.form-control(name="category")
+                                option(selected="")
+                                    | --Select Category--
+                                option Returnee
+                                option Contact
+                                option Alert
+                                option Volunteer
+                            #category_error
+                    .submits
+                        button.btn.btn-primary.col-md-4.ml-auto(type="submit" onmouseover) Register
+        script(src="js/script.js")
+        script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous")
