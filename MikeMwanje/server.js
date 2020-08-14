@@ -4,7 +4,7 @@ require("./models/patient");
 const mongoose = require('mongoose');
 const app = new express();
 
-// //database
+// Using my .env file
 require('dotenv').config();
 
 app.set('view engine', 'pug');
@@ -21,6 +21,7 @@ mongoose.connect(process.env.DATABASE, {
     useUnifiedTopology: true,
     useCreateIndex: true,
 });
+
 mongoose.connection
     .on('open', () => {
         console.log('Mongoose connection open');
@@ -37,14 +38,14 @@ app.post('/', async (req, res) => {
     try {
         const patient = new Patient(req.body);
         await patient.save();
-        res.redirect('/')
+        res.render('index', { success: 'Registration was successfull!'});
     } catch (error) {
         console.log(error)
     }
 });
 
 app.get('*', (req, res) => {
-    res.status(404).render('404', { page: '404' })
+    res.status(404).send("Error!")
 });
 
 // Listening for requests: the server!

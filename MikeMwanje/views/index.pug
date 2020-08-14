@@ -9,13 +9,15 @@ html(lang="en")
     body
         .card.container
             img(src="images/form-header-image.png")
-            // <h5 class="card-header">Featured</h5>
             .card-body
-                h6.card-title Ministry of Health
-                h4
-                    strong COVID-19(CORONA VIRUS)
-                h6 Virus-Test Registration Form
-                form(name="pform" action="/" method="POST")
+                div.container#headings
+                    h4.card-title Ministry of Health
+                    h1
+                        strong COVID-19(CORONA VIRUS)
+                    h4 Virus-Test Registration Form
+                div#message(class="alert alert-success" role="alert" )
+                        |   #{success}
+                form(action="/" method="POST")
                     .form-row
                         .form-group.col-md-6
                             label Surname 
@@ -34,8 +36,7 @@ html(lang="en")
                             #dob_error
                         .form-group.col-md-6
                             label
-                                | Place of
-                                | Residence
+                                | Place of Residence
                             input#residence.form-control(type="text" name="residence")
                             #residence_error
                     .form-row
@@ -71,7 +72,7 @@ html(lang="en")
                                 option Volunteer
                             #category_error
                     .submits
-                        button.btn.btn-primary.col-md-4.ml-auto(type="submit" onmouseover) Register
+                        button#submit.btn.btn-primary.col-md-4.ml-auto(type="submit" onmouseover="validate()") Register
         script(src="js/script.js")
         script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
         script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous")

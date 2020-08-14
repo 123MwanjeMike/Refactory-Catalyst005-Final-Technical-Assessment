@@ -1,3 +1,13 @@
 .card {
     max-width: 60%;
 }
+
+#heading {
+    max-width: 80%;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.warnings {
+    color: red;
+}
